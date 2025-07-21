@@ -6,6 +6,11 @@
     <title>AKDEMİR GOLD Fiyatlar</title>
     <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
     <style>
+      body,
+      html {
+        height: 100%;
+      }
+
       body {
         font-family: Arial, sans-serif;
         background: #e4f1ed;
@@ -15,7 +20,7 @@
       .header {
         background: #74bd8b;
         text-align: center;
-        padding: 20px 0 10px;
+        padding: 10px 0 5px;
         color: white;
       }
       .header h1 {
@@ -144,6 +149,13 @@
         td {
           font-size: 28px;
           padding: 12px;
+        }
+      }
+      @media (min-width: 1920px) {
+        th,
+        td {
+          font-size: 24px;
+          padding: 8px;
         }
       }
     </style>
