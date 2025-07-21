@@ -173,6 +173,32 @@
           padding: 8px;
         }
       }
+      /* TV görünümü için tabloyu iki sütuna böl */
+      .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 30px;
+        padding: 20px;
+      }
+
+      .row table {
+        width: 45%;
+      }
+
+      /* Küçük ekranlarda tablo yine tek sütun görünsün */
+      @media (max-width: 768px) {
+        .row {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .row table {
+          width: 100%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -184,92 +210,106 @@
       <div class="datetime" id="datetime"></div>
     </div>
     <div class="container">
-      <table>
-        <thead>
-          <tr>
-            <th>Ürün</th>
-            <th>Tavsiye Edilen Alış</th>
-            <th>Tavsiye Edilen Satış</th>
-          </tr>
-        </thead>
-        <tbody id="fiyatlar">
-          <tr>
-            <td>Has Altın</td>
-            <td class="alis" id="ALTIN_alis">-</td>
-            <td class="satis" id="ALTIN_satis">-</td>
-          </tr>
-          <tr>
-            <td>22 Ayar Bilezik</td>
-            <td class="alis" id="BILEZIK_22_alis">-</td>
-            <td class="satis" id="BILEZIK_22_satis">-</td>
-          </tr>
-          <tr>
-            <td>22 Ayar CNC Bilezik</td>
-            <td class="alis" id="BILEZIK_CNC_22_alis">-</td>
-            <td class="satis" id="BILEZIK_CNC_22_satis">-</td>
-          </tr>
-          <tr>
-            <td>21 Ayar Halep</td>
-            <td class="alis" id="HALEP_21_alis">-</td>
-            <td class="satis" id="HALEP_21_satis">-</td>
-          </tr>
-          <tr>
-            <td>14 Ayar</td>
-            <td class="alis" id="AYAR_14_alis">-</td>
-            <td class="satis" id="AYAR_14_satis">-</td>
-          </tr>
-          <tr>
-            <td>Darp Çeyrek</td>
-            <td class="alis" id="DARP_CEYREK_alis">-</td>
-            <td class="satis" id="DARP_CEYREK_satis">-</td>
-          </tr>
-          <tr>
-            <td>Açık Çeyrek</td>
-            <td class="alis" id="ACIK_CEYREK_alis">-</td>
-            <td class="satis" id="ACIK_CEYREK_satis">-</td>
-          </tr>
-          <tr>
-            <td>Darp Yarım</td>
-            <td class="alis" id="DARP_YARIM_alis">-</td>
-            <td class="satis" id="DARP_YARIM_satis">-</td>
-          </tr>
-          <tr>
-            <td>Açık Yarım</td>
-            <td class="alis" id="ACIK_YARIM_alis">-</td>
-            <td class="satis" id="ACIK_YARIM_satis">-</td>
-          </tr>
-          <tr>
-            <td>Darp Tam</td>
-            <td class="alis" id="DARP_TAM_alis">-</td>
-            <td class="satis" id="DARP_TAM_satis">-</td>
-          </tr>
-          <tr>
-            <td>Açık Tam</td>
-            <td class="alis" id="ACIK_TAM_alis">-</td>
-            <td class="satis" id="ACIK_TAM_satis">-</td>
-          </tr>
-          <tr>
-            <td>Darp 7.20</td>
-            <td class="alis" id="DARP_720_alis">-</td>
-            <td class="satis" id="DARP_720_satis">-</td>
-          </tr>
-          <tr>
-            <td>Darp 17.50</td>
-            <td class="alis" id="DARP_1750_alis">-</td>
-            <td class="satis" id="DARP_1750_satis">-</td>
-          </tr>
-          <tr>
-            <td>Gram Altın (1-20g)</td>
-            <td class="alis" id="GRAM_KUCUK_alis">-</td>
-            <td class="satis" id="GRAM_KUCUK_satis">-</td>
-          </tr>
-          <tr>
-            <td>Gram Altın (50-100g)</td>
-            <td class="alis" id="GRAM_BUYUK_alis">-</td>
-            <td class="satis" id="GRAM_BUYUK_satis">-</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="row">
+        <table>
+          <thead>
+            <tr>
+              <th>Ürün</th>
+              <th>Alış</th>
+              <th>Satış</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Has Altın</td>
+              <td class="alis" id="ALTIN_alis">-</td>
+              <td class="satis" id="ALTIN_satis">-</td>
+            </tr>
+            <tr>
+              <td>22 Ayar Bilezik</td>
+              <td class="alis" id="BILEZIK_22_alis">-</td>
+              <td class="satis" id="BILEZIK_22_satis">-</td>
+            </tr>
+            <tr>
+              <td>22 CNC Bilezik</td>
+              <td class="alis" id="BILEZIK_CNC_22_alis">-</td>
+              <td class="satis" id="BILEZIK_CNC_22_satis">-</td>
+            </tr>
+            <tr>
+              <td>21 Ayar Halep</td>
+              <td class="alis" id="HALEP_21_alis">-</td>
+              <td class="satis" id="HALEP_21_satis">-</td>
+            </tr>
+            <tr>
+              <td>14 Ayar</td>
+              <td class="alis" id="AYAR_14_alis">-</td>
+              <td class="satis" id="AYAR_14_satis">-</td>
+            </tr>
+            <tr>
+              <td>Darp Çeyrek</td>
+              <td class="alis" id="DARP_CEYREK_alis">-</td>
+              <td class="satis" id="DARP_CEYREK_satis">-</td>
+            </tr>
+            <tr>
+              <td>Açık Çeyrek</td>
+              <td class="alis" id="ACIK_CEYREK_alis">-</td>
+              <td class="satis" id="ACIK_CEYREK_satis">-</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Ürün</th>
+              <th>Alış</th>
+              <th>Satış</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Darp Yarım</td>
+              <td class="alis" id="DARP_YARIM_alis">-</td>
+              <td class="satis" id="DARP_YARIM_satis">-</td>
+            </tr>
+            <tr>
+              <td>Açık Yarım</td>
+              <td class="alis" id="ACIK_YARIM_alis">-</td>
+              <td class="satis" id="ACIK_YARIM_satis">-</td>
+            </tr>
+            <tr>
+              <td>Darp Tam</td>
+              <td class="alis" id="DARP_TAM_alis">-</td>
+              <td class="satis" id="DARP_TAM_satis">-</td>
+            </tr>
+            <tr>
+              <td>Açık Tam</td>
+              <td class="alis" id="ACIK_TAM_alis">-</td>
+              <td class="satis" id="ACIK_TAM_satis">-</td>
+            </tr>
+            <tr>
+              <td>Darp 7.20</td>
+              <td class="alis" id="DARP_720_alis">-</td>
+              <td class="satis" id="DARP_720_satis">-</td>
+            </tr>
+            <tr>
+              <td>Darp 17.50</td>
+              <td class="alis" id="DARP_1750_alis">-</td>
+              <td class="satis" id="DARP_1750_satis">-</td>
+            </tr>
+            <tr>
+              <td>Gram Altın (1-20g)</td>
+              <td class="alis" id="GRAM_KUCUK_alis">-</td>
+              <td class="satis" id="GRAM_KUCUK_satis">-</td>
+            </tr>
+            <tr>
+              <td>Gram Altın (50-100g)</td>
+              <td class="alis" id="GRAM_BUYUK_alis">-</td>
+              <td class="satis" id="GRAM_BUYUK_satis">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <script>
       const socket = io('https://socketweb.haremaltin.com', {
