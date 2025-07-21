@@ -167,41 +167,24 @@
         }
       }
       @media (min-width: 1920px) {
-        .container {
+        .tv-container {
           display: flex;
           justify-content: center;
+          gap: 40px;
+          margin-top: 30px;
         }
-
-        table {
+        .tv-left,
+        .tv-right {
           width: 45%;
-          margin: 20px;
-          display: inline-block;
-          vertical-align: top;
-        }
-
-        .table-left,
-        .table-right {
-          width: 45%;
-          margin: 20px;
-        }
-
-        tbody {
-          display: flex;
-          flex-wrap: wrap;
-        }
-
-        tbody tr {
-          width: 50%;
-          display: inline-block;
-          box-sizing: border-box;
-        }
-
-        th {
           font-size: 28px;
+          border-collapse: collapse;
         }
-
-        td {
-          font-size: 26px;
+        .tv-left th,
+        .tv-left td,
+        .tv-right th,
+        .tv-right td {
+          border: 2px solid #328cc1;
+          padding: 18px;
         }
       }
     </style>
@@ -302,6 +285,72 @@
         </tbody>
       </table>
     </div>
+    <div class="tv-container">
+      <table class="tv-left">
+        <thead>
+          <tr>
+            <th>Ürün</th>
+            <th>Alış</th>
+            <th>Satış</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Darp Çeyrek</td>
+            <td id="DARP_CEYREK_alis">-</td>
+            <td id="DARP_CEYREK_satis">-</td>
+          </tr>
+          <tr>
+            <td>Darp Yarım</td>
+            <td id="DARP_YARIM_alis">-</td>
+            <td id="DARP_YARIM_satis">-</td>
+          </tr>
+          <tr>
+            <td>Darp Tam</td>
+            <td id="DARP_TAM_alis">-</td>
+            <td id="DARP_TAM_satis">-</td>
+          </tr>
+          <tr>
+            <td>Darp 7.20</td>
+            <td id="DARP_720_alis">-</td>
+            <td id="DARP_720_satis">-</td>
+          </tr>
+          <tr>
+            <td>Darp 17.50</td>
+            <td id="DARP_1750_alis">-</td>
+            <td id="DARP_1750_satis">-</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="tv-right">
+        <thead>
+          <tr>
+            <th>Ürün</th>
+            <th>Alış</th>
+            <th>Satış</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Açık Çeyrek</td>
+            <td id="ACIK_CEYREK_alis">-</td>
+            <td id="ACIK_CEYREK_satis">-</td>
+          </tr>
+          <tr>
+            <td>Açık Yarım</td>
+            <td id="ACIK_YARIM_alis">-</td>
+            <td id="ACIK_YARIM_satis">-</td>
+          </tr>
+          <tr>
+            <td>Açık Tam</td>
+            <td id="ACIK_TAM_alis">-</td>
+            <td id="ACIK_TAM_satis">-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <script>
       const socket = io('https://socketweb.haremaltin.com', {
         transports: ['websocket']
