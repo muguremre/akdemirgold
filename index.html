@@ -2,6 +2,7 @@
 <html lang="tr">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="akdemirgold.jpg" />
     <title>AKDEMİR GOLD Fiyatlar</title>
     <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
     <style>
@@ -81,6 +82,70 @@
         color: #1b998b;
         font-weight: bold;
       }
+      .datetime {
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        font-size: 24px;
+        color: #383e42;
+        font-weight: bold;
+      }
+      .header {
+        position: relative;
+      }
+      /* Küçük ekran - Telefon */
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 20px;
+        }
+        .header p {
+          font-size: 14px;
+        }
+        .datetime {
+          font-size: 12px;
+        }
+        th,
+        td {
+          font-size: 14px;
+          padding: 6px;
+        }
+      }
+
+      /* Orta ekran - Tablet / Laptop */
+      @media (min-width: 769px) and (max-width: 1280px) {
+        .header h1 {
+          font-size: 28px;
+        }
+        .header p {
+          font-size: 18px;
+        }
+        .datetime {
+          font-size: 16px;
+        }
+        th,
+        td {
+          font-size: 20px;
+          padding: 8px;
+        }
+      }
+
+      /* Büyük ekran - TV / Geniş PC */
+      @media (min-width: 1281px) {
+        .header h1 {
+          font-size: 40px;
+        }
+        .header p {
+          font-size: 24px;
+        }
+        .datetime {
+          font-size: 22px;
+        }
+        th,
+        td {
+          font-size: 28px;
+          padding: 12px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -89,6 +154,7 @@
         <span class="akdemir">AKDEMİR</span> <span class="gold">GOLD</span>
       </h1>
       <p>0506 045 2210 ~ 0533 305 1052</p>
+      <div class="datetime" id="datetime"></div>
     </div>
     <div class="container">
       <table>
@@ -228,6 +294,14 @@
           }
         });
       });
+      function updateTime() {
+        const now = new Date();
+        const date = now.toLocaleDateString('tr-TR');
+        const time = now.toLocaleTimeString('tr-TR');
+        document.getElementById('datetime').innerText = `${date} - ${time}`;
+      }
+      setInterval(updateTime, 1000);
+      updateTime();
     </script>
     <footer class="footer">
       <p>
