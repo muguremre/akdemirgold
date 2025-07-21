@@ -22,46 +22,51 @@
         margin: 0;
         padding: 0;
       }
+
       .header {
         background: #74bd8b;
         text-align: center;
         padding: 10px 0 5px;
         color: white;
       }
+
       .header h1 {
         margin: 0;
         font-size: 32px;
       }
-      .header h1 .akdemir {
-        color: #383e42;
-        font-weight: bold;
-      }
+
+      .header h1 .akdemir,
       .header h1 .gold {
         color: #383e42;
         font-weight: bold;
       }
+
       .header h2 {
         margin: 5px 0 0;
         font-size: 20px;
         font-weight: normal;
       }
+
       .header p {
         margin: 8px 0 15px;
         font-size: 20px;
         font-weight: bold;
         color: #383e42;
       }
+
       .container {
         width: 100%;
         background: #fff;
         min-height: calc(100vh - 140px);
         box-sizing: border-box;
       }
+
       table {
         width: 100%;
         border-collapse: collapse;
         font-size: 16px;
       }
+
       th,
       td {
         padding: 5px;
@@ -70,15 +75,23 @@
         font-weight: bold;
         border-bottom: 1px solid #328cc1;
       }
+
       th {
         font-weight: bold;
         background: #d9ead3;
         font-size: 18px;
       }
+
       .alis {
         color: #d7263d;
         font-weight: bold;
       }
+
+      .satis {
+        color: #1b998b;
+        font-weight: bold;
+      }
+
       .footer {
         background: #74bd8b;
         color: black;
@@ -88,10 +101,6 @@
         font-size: 14px;
       }
 
-      .satis {
-        color: #1b998b;
-        font-weight: bold;
-      }
       .datetime {
         position: absolute;
         bottom: 10px;
@@ -104,6 +113,7 @@
       .header {
         position: relative;
       }
+
       /* Küçük ekran - Telefon */
       @media (max-width: 768px) {
         .datetime {
@@ -118,9 +128,6 @@
         .header p {
           font-size: 18px;
         }
-        .datetime {
-          font-size: 16px;
-        }
         th,
         td {
           font-size: 18px;
@@ -129,10 +136,16 @@
         table {
           font-size: 18px;
         }
+        .row {
+          display: block;
+        }
+        .row table {
+          width: 100%;
+        }
       }
 
       /* Orta ekran - Tablet / Laptop */
-      @media (min-width: 769px) and (max-width: 1280px) {
+      @media (min-width: 769px) and (max-width: 1279px) {
         .header h1 {
           font-size: 28px;
         }
@@ -147,10 +160,16 @@
           font-size: 20px;
           padding: 8px;
         }
+        .row {
+          display: block;
+        }
+        .row table {
+          width: 100%;
+        }
       }
 
-      /* Büyük ekran - TV / Geniş PC */
-      @media (min-width: 1281px) {
+      /* Büyük ekran - TV */
+      @media (min-width: 1280px) {
         .header h1 {
           font-size: 40px;
         }
@@ -165,38 +184,19 @@
           font-size: 28px;
           padding: 12px;
         }
-      }
-      @media (min-width: 1920px) {
-        th,
-        td {
-          font-size: 24px;
-          padding: 8px;
-        }
-      }
-      /* TV görünümü için tabloyu iki sütuna böl */
-      .row {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: flex-start;
-        gap: 30px;
-        padding: 20px;
-      }
 
-      .row table {
-        width: 45%;
-      }
-
-      /* Küçük ekranlarda tablo yine tek sütun görünsün */
-      @media (max-width: 768px) {
         .row {
-          flex-direction: column;
-          align-items: center;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
         }
 
         .row table {
-          width: 100%;
+          width: 50%;
+          margin: 0;
+          padding: 0;
+          border-collapse: collapse;
         }
       }
     </style>
