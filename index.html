@@ -167,10 +167,41 @@
         }
       }
       @media (min-width: 1920px) {
-        th,
+        .container {
+          display: flex;
+          justify-content: center;
+        }
+
+        table {
+          width: 45%;
+          margin: 20px;
+          display: inline-block;
+          vertical-align: top;
+        }
+
+        .table-left,
+        .table-right {
+          width: 45%;
+          margin: 20px;
+        }
+
+        tbody {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        tbody tr {
+          width: 50%;
+          display: inline-block;
+          box-sizing: border-box;
+        }
+
+        th {
+          font-size: 28px;
+        }
+
         td {
-          font-size: 24px;
-          padding: 8px;
+          font-size: 26px;
         }
       }
     </style>
