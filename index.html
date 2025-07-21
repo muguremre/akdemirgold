@@ -6,9 +6,12 @@
     <title>AKDEMİR GOLD Fiyatlar</title>
     <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
     <style>
-      body,
-      html {
+      html,
+      body {
         height: 100%;
+        margin: 0;
+        padding: 0;
+        background: #e4f1ed;
       }
 
       body {
@@ -49,7 +52,7 @@
       .container {
         width: 100%;
         background: #fff;
-
+        min-height: calc(100vh - 140px);
         box-sizing: border-box;
       }
       table {
@@ -253,17 +256,6 @@
             <td class="alis" id="GRAM_BUYUK_alis">-</td>
             <td class="satis" id="GRAM_BUYUK_satis">-</td>
           </tr>
-
-          <tr>
-            <td>Dolar / TL</td>
-            <td class="alis" id="USDTRY_alis">-</td>
-            <td class="satis" id="USDTRY_satis">-</td>
-          </tr>
-          <tr>
-            <td>Euro / TL</td>
-            <td class="alis" id="EURTRY_alis">-</td>
-            <td class="satis" id="EURTRY_satis">-</td>
-          </tr>
         </tbody>
       </table>
     </div>
@@ -296,15 +288,6 @@
         set('DARP_1750', alis * 16.15, satis * 16.35);
         set('GRAM_KUCUK', alis * 0.995, satis * 1.01);
         set('GRAM_BUYUK', alis * 0.995, satis * 1.005);
-        ['USDTRY', 'EURTRY'].forEach((code) => {
-          if (data[code]) {
-            set(
-              code,
-              parseFloat(data[code].alis),
-              parseFloat(data[code].satis)
-            );
-          }
-        });
       });
       function updateTime() {
         const now = new Date();
