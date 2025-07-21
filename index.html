@@ -14,83 +14,31 @@
         margin: 0;
         padding: 0;
         background: #e4f1ed;
+        font-family: Arial, sans-serif;
       }
 
-      body {
-        font-family: Arial, sans-serif;
-        background: #e4f1ed;
-        margin: 0;
-        padding: 0;
-      }
+      /* HEADER */
       .header {
         background: #74bd8b;
         text-align: center;
         padding: 10px 0 5px;
         color: white;
+        position: relative;
       }
       .header h1 {
         margin: 0;
         font-size: 32px;
       }
-      .header h1 .akdemir {
+      .header .akdemir,
+      .header .gold {
         color: #383e42;
         font-weight: bold;
-      }
-      .header h1 .gold {
-        color: #383e42;
-        font-weight: bold;
-      }
-      .header h2 {
-        margin: 5px 0 0;
-        font-size: 20px;
-        font-weight: normal;
       }
       .header p {
         margin: 8px 0 15px;
         font-size: 20px;
         font-weight: bold;
         color: #383e42;
-      }
-      .container {
-        width: 100%;
-        background: #fff;
-        min-height: calc(100vh - 140px);
-        box-sizing: border-box;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 16px;
-      }
-      th,
-      td {
-        padding: 5px;
-        font-size: 24px;
-        text-align: center;
-        font-weight: bold;
-        border-bottom: 1px solid #328cc1;
-      }
-      th {
-        font-weight: bold;
-        background: #d9ead3;
-        font-size: 18px;
-      }
-      .alis {
-        color: #d7263d;
-        font-weight: bold;
-      }
-      .footer {
-        background: #74bd8b;
-        color: black;
-        text-align: center;
-        font-weight: bold;
-        padding: 5px;
-        font-size: 14px;
-      }
-
-      .satis {
-        color: #1b998b;
-        font-weight: bold;
       }
       .datetime {
         position: absolute;
@@ -101,90 +49,97 @@
         font-weight: bold;
       }
 
-      .header {
-        position: relative;
+      /* CONTAINER */
+      .container {
+        width: 100%;
+        min-height: calc(100vh - 140px);
+        background: #fff;
+        box-sizing: border-box;
       }
-      /* Küçük ekran - Telefon */
+
+      /* FLEXBOX ÜRÜNLER */
+      .product-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .product-card {
+        flex: 1 1 400px;
+        min-width: 400px;
+        max-width: 500px;
+        background: #d9ead3;
+        border-radius: 10px;
+        text-align: center;
+        padding: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-card .title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .alis {
+        font-size: 28px;
+        color: #d7263d;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .satis {
+        font-size: 28px;
+        color: #1b998b;
+        font-weight: bold;
+      }
+
+      /* FOOTER */
+      .footer {
+        background: #74bd8b;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        padding: 5px;
+        font-size: 14px;
+      }
+
+      /* ✅ TELEFON */
       @media (max-width: 768px) {
-        .datetime {
-          position: static;
-          margin-top: 8px;
-          text-align: center;
-          font-size: 16px;
+        .product-card {
+          flex: 1 1 90%;
+          min-width: 90%;
+          max-width: 90%;
         }
-        .header h1 {
-          font-size: 20px;
-        }
-        .header p {
-          font-size: 18px;
-        }
-        .datetime {
-          font-size: 16px;
-        }
-        th,
-        td {
-          font-size: 18px;
-          padding: 10px;
-        }
-        table {
-          font-size: 18px;
-        }
-      }
-
-      /* Orta ekran - Tablet / Laptop */
-      @media (min-width: 769px) and (max-width: 1280px) {
-        .header h1 {
-          font-size: 28px;
-        }
-        .header p {
-          font-size: 18px;
-        }
-        .datetime {
-          font-size: 16px;
-        }
-        th,
-        td {
-          font-size: 20px;
-          padding: 8px;
-        }
-      }
-
-      /* Büyük ekran - TV / Geniş PC */
-      @media (min-width: 1281px) {
-        .header h1 {
-          font-size: 40px;
-        }
-        .header p {
+        .product-card .title {
           font-size: 24px;
         }
-        .datetime {
+        .alis,
+        .satis {
           font-size: 22px;
         }
-        th,
-        td {
-          font-size: 28px;
-          padding: 12px;
+        .datetime {
+          position: static;
+          text-align: center;
+          font-size: 16px;
+          margin-top: 10px;
+        }
+        .header h1 {
+          font-size: 24px;
+        }
+        .header p {
+          font-size: 18px;
         }
       }
-      @media (min-width: 1920px) {
-        .tv-container {
-          display: flex;
-          justify-content: center;
-          gap: 40px;
-          margin-top: 30px;
-        }
-        .tv-left,
-        .tv-right {
-          width: 45%;
-          font-size: 28px;
-          border-collapse: collapse;
-        }
-        .tv-left th,
-        .tv-left td,
-        .tv-right th,
-        .tv-right td {
-          border: 2px solid #328cc1;
-          padding: 18px;
+
+      /* ✅ TV EKRANI */
+      @media (min-width: 1280px) {
+        .product-card {
+          flex: 1 1 45%;
+          min-width: 45%;
+          max-width: 45%;
         }
       }
     </style>
@@ -198,157 +153,97 @@
       <div class="datetime" id="datetime"></div>
     </div>
     <div class="container">
-      <table>
-        <thead>
-          <tr>
-            <th>Ürün</th>
-            <th>Tavsiye Edilen Alış</th>
-            <th>Tavsiye Edilen Satış</th>
-          </tr>
-        </thead>
-        <tbody id="fiyatlar">
-          <tr>
-            <td>Has Altın</td>
-            <td class="alis" id="ALTIN_alis">-</td>
-            <td class="satis" id="ALTIN_satis">-</td>
-          </tr>
-          <tr>
-            <td>22 Ayar Bilezik</td>
-            <td class="alis" id="BILEZIK_22_alis">-</td>
-            <td class="satis" id="BILEZIK_22_satis">-</td>
-          </tr>
-          <tr>
-            <td>22 Ayar CNC Bilezik</td>
-            <td class="alis" id="BILEZIK_CNC_22_alis">-</td>
-            <td class="satis" id="BILEZIK_CNC_22_satis">-</td>
-          </tr>
-          <tr>
-            <td>21 Ayar Halep</td>
-            <td class="alis" id="HALEP_21_alis">-</td>
-            <td class="satis" id="HALEP_21_satis">-</td>
-          </tr>
-          <tr>
-            <td>14 Ayar</td>
-            <td class="alis" id="AYAR_14_alis">-</td>
-            <td class="satis" id="AYAR_14_satis">-</td>
-          </tr>
-          <tr>
-            <td>Darp Çeyrek</td>
-            <td class="alis" id="DARP_CEYREK_alis">-</td>
-            <td class="satis" id="DARP_CEYREK_satis">-</td>
-          </tr>
-          <tr>
-            <td>Açık Çeyrek</td>
-            <td class="alis" id="ACIK_CEYREK_alis">-</td>
-            <td class="satis" id="ACIK_CEYREK_satis">-</td>
-          </tr>
-          <tr>
-            <td>Darp Yarım</td>
-            <td class="alis" id="DARP_YARIM_alis">-</td>
-            <td class="satis" id="DARP_YARIM_satis">-</td>
-          </tr>
-          <tr>
-            <td>Açık Yarım</td>
-            <td class="alis" id="ACIK_YARIM_alis">-</td>
-            <td class="satis" id="ACIK_YARIM_satis">-</td>
-          </tr>
-          <tr>
-            <td>Darp Tam</td>
-            <td class="alis" id="DARP_TAM_alis">-</td>
-            <td class="satis" id="DARP_TAM_satis">-</td>
-          </tr>
-          <tr>
-            <td>Açık Tam</td>
-            <td class="alis" id="ACIK_TAM_alis">-</td>
-            <td class="satis" id="ACIK_TAM_satis">-</td>
-          </tr>
-          <tr>
-            <td>Darp 7.20</td>
-            <td class="alis" id="DARP_720_alis">-</td>
-            <td class="satis" id="DARP_720_satis">-</td>
-          </tr>
-          <tr>
-            <td>Darp 17.50</td>
-            <td class="alis" id="DARP_1750_alis">-</td>
-            <td class="satis" id="DARP_1750_satis">-</td>
-          </tr>
-          <tr>
-            <td>Gram Altın (1-20g)</td>
-            <td class="alis" id="GRAM_KUCUK_alis">-</td>
-            <td class="satis" id="GRAM_KUCUK_satis">-</td>
-          </tr>
-          <tr>
-            <td>Gram Altın (50-100g)</td>
-            <td class="alis" id="GRAM_BUYUK_alis">-</td>
-            <td class="satis" id="GRAM_BUYUK_satis">-</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="tv-container">
-      <table class="tv-left">
-        <thead>
-          <tr>
-            <th>Ürün</th>
-            <th>Alış</th>
-            <th>Satış</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Darp Çeyrek</td>
-            <td id="DARP_CEYREK_alis">-</td>
-            <td id="DARP_CEYREK_satis">-</td>
-          </tr>
-          <tr>
-            <td>Darp Yarım</td>
-            <td id="DARP_YARIM_alis">-</td>
-            <td id="DARP_YARIM_satis">-</td>
-          </tr>
-          <tr>
-            <td>Darp Tam</td>
-            <td id="DARP_TAM_alis">-</td>
-            <td id="DARP_TAM_satis">-</td>
-          </tr>
-          <tr>
-            <td>Darp 7.20</td>
-            <td id="DARP_720_alis">-</td>
-            <td id="DARP_720_satis">-</td>
-          </tr>
-          <tr>
-            <td>Darp 17.50</td>
-            <td id="DARP_1750_alis">-</td>
-            <td id="DARP_1750_satis">-</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="product-wrapper">
+        <div class="product-card">
+          <div class="title">Has Altın</div>
+          <div class="alis" id="ALTIN_alis">-</div>
+          <div class="satis" id="ALTIN_satis">-</div>
+        </div>
 
-      <table class="tv-right">
-        <thead>
-          <tr>
-            <th>Ürün</th>
-            <th>Alış</th>
-            <th>Satış</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Açık Çeyrek</td>
-            <td id="ACIK_CEYREK_alis">-</td>
-            <td id="ACIK_CEYREK_satis">-</td>
-          </tr>
-          <tr>
-            <td>Açık Yarım</td>
-            <td id="ACIK_YARIM_alis">-</td>
-            <td id="ACIK_YARIM_satis">-</td>
-          </tr>
-          <tr>
-            <td>Açık Tam</td>
-            <td id="ACIK_TAM_alis">-</td>
-            <td id="ACIK_TAM_satis">-</td>
-          </tr>
-        </tbody>
-      </table>
+        <div class="product-card">
+          <div class="title">22 Ayar Bilezik</div>
+          <div class="alis" id="BILEZIK_22_alis">-</div>
+          <div class="satis" id="BILEZIK_22_satis">-</div>
+        </div>
+
+        <div class="product-card">
+          <div class="title">22 Ayar CNC Bilezik</div>
+          <div class="alis" id="BILEZIK_CNC_22_alis">-</div>
+          <div class="satis" id="BILEZIK_CNC_22_satis">-</div>
+        </div>
+
+        <div class="product-card">
+          <div class="title">21 Ayar Halep</div>
+          <div class="alis" id="HALEP_21_alis">-</div>
+          <div class="satis" id="HALEP_21_satis">-</div>
+        </div>
+
+        <div class="product-card">
+          <div class="title">14 Ayar</div>
+          <div class="alis" id="AYAR_14_alis">-</div>
+          <div class="satis" id="AYAR_14_satis">-</div>
+        </div>
+
+        <div class="product-card">
+          <div class="title">Darp Çeyrek</div>
+          <div class="alis" id="DARP_CEYREK_alis">-</div>
+          <div class="satis" id="DARP_CEYREK_satis">-</div>
+        </div>
+
+        <div class="product-card">
+          <div class="title">Açık Çeyrek</div>
+          <div class="alis" id="ACIK_CEYREK_alis">-</div>
+          <div class="satis" id="ACIK_CEYREK_satis">-</div>
+        </div>
+
+        <div class="product-card">
+          <div class="title">Darp Yarım</div>
+          <div class="alis" id="DARP_YARIM_alis">-</div>
+          <div class="satis" id="DARP_YARIM_satis">-</div>
+        </div>
+
+        <div class="product-card">
+          <div class="title">Açık Yarım</div>
+          <div class="alis" id="ACIK_YARIM_alis">-</div>
+          <div class="satis" id="ACIK_YARIM_satis">-</div>
+        </div>
+
+        <div class="product-card">
+          <div class="title">Darp Tam</div>
+          <div class="alis" id="DARP_TAM_alis">-</div>
+          <div class="satis" id="DARP_TAM_satis">-</div>
+        </div>
+
+        <div class="product-card">
+          <div class="title">Açık Tam</div>
+          <div class="alis" id="ACIK_TAM_alis">-</div>
+          <div class="satis" id="ACIK_TAM_satis">-</div>
+        </div>
+
+        <div class="product-card">
+          <div class="title">Darp 7.20</div>
+          <div class="alis" id="DARP_720_alis">-</div>
+          <div class="satis" id="DARP_720_satis">-</div>
+        </div>
+
+        <div class="product-card">
+          <div class="title">Darp 17.50</div>
+          <div class="alis" id="DARP_1750_alis">-</div>
+          <div class="satis" id="DARP_1750_satis">-</div>
+        </div>
+
+        <div class="product-card">
+          <div class="title">Gram Altın (1-20g)</div>
+          <div class="alis" id="GRAM_KUCUK_alis">-</div>
+          <div class="satis" id="GRAM_KUCUK_satis">-</div>
+        </div>
+
+        <div class="product-card">
+          <div class="title">Gram Altın (50-100g)</div>
+          <div class="alis" id="GRAM_BUYUK_alis">-</div>
+          <div class="satis" id="GRAM_BUYUK_satis">-</div>
+        </div>
+      </div>
     </div>
 
     <script>
