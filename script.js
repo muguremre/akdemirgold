@@ -27,9 +27,9 @@ try {
     }
 
     if (data.ALTIN) {
-      const alis = parseFloat(data.ALTIN.alis - 3);
-      const satis = parseFloat(data.ALTIN.satis + 3);
-      set('ALTIN', alis, satis);
+      const alis = parseFloat(data.ALTIN.alis);
+      const satis = parseFloat(data.ALTIN.satis);
+      set('ALTIN', alis - 3, satis + 3);
       set('BILEZIK_22', alis * 0.913, satis * 0.925);
       set('BILEZIK_CNC_22', alis * 0.913, satis * 0.932);
       set('HALEP_21', alis * 0.87, satis * 0.885);
