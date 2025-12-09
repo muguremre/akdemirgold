@@ -99,3 +99,8 @@ setInterval(() => {
     vitrinImg.style.opacity = 1;
   }, 600);
 }, 30000);
+document.addEventListener('click', () => {
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  }
+});

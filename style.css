@@ -148,25 +148,27 @@ th {
   }
 }
 
-/* === TV & BÜYÜK EKRAN === */
 @media (min-width: 1280px) {
   .row {
     display: grid;
-    grid-template-columns: 2fr 3fr;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr; /* İki tablo eşit genişlik */
+    gap: 0; /* Aradaki boşluk kalktı */
     align-items: start;
   }
 
+  /* Sol tablo */
   .row table:first-child {
     grid-column: 1;
     grid-row: 1 / span 2;
   }
 
+  /* Sağ tablo */
   .row table:nth-child(2) {
     grid-column: 2;
     grid-row: 1;
   }
 
+  /* Vitrin sağ alt */
   .vitrin-slider {
     grid-column: 2;
     grid-row: 2;
@@ -175,6 +177,16 @@ th {
     background: #00000010;
     border-radius: 12px;
     overflow: hidden;
+  }
+
+  /* Satır altı çizgileri sadece TV modunda */
+  th,
+  td {
+    border-bottom: 2px solid #dcdcdc !important;
+  }
+
+  th {
+    border-bottom: 3px solid #999 !important;
   }
 
   .vitrin-slider img {
