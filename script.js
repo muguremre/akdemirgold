@@ -77,3 +77,25 @@ function updateTime() {
 
 setInterval(updateTime, 1000);
 updateTime();
+
+const vitrins = [
+  'vitrin1.jpeg',
+  'vitrin2.jpeg',
+  'vitrin3.jpeg',
+  'vitrin4.jpeg',
+  'vitrin5.jpeg',
+  'vitrin6.jpeg'
+];
+
+let currentIndex = 0;
+const vitrinImg = document.getElementById('vitrinImage');
+
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % vitrins.length;
+  vitrinImg.style.opacity = 0;
+
+  setTimeout(() => {
+    vitrinImg.src = vitrins[currentIndex];
+    vitrinImg.style.opacity = 1;
+  }, 600);
+}, 3000);

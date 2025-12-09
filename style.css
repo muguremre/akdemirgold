@@ -18,6 +18,7 @@ body {
   text-align: center;
   padding: 10px 0 5px;
   color: white;
+  position: relative;
 }
 
 .header h1 {
@@ -29,12 +30,6 @@ body {
 .header h1 .gold {
   color: #383e42;
   font-weight: bold;
-}
-
-.header h2 {
-  margin: 5px 0 0;
-  font-size: 20px;
-  font-weight: normal;
 }
 
 .header p {
@@ -100,11 +95,7 @@ th {
   font-weight: bold;
 }
 
-.header {
-  position: relative;
-}
-
-/* Küçük ekran - Telefon */
+/* === KÜÇÜK EKRAN === */
 @media (max-width: 768px) {
   .datetime {
     position: static;
@@ -112,88 +103,62 @@ th {
     text-align: center;
     font-size: 16px;
   }
-  .header h1 {
-    font-size: 20px;
+  .row {
+    display: block;
   }
-  .header p {
-    font-size: 18px;
+  .row table {
+    width: 100%;
   }
   th,
   td {
     font-size: 18px;
     padding: 10px;
   }
-  table {
-    font-size: 18px;
-  }
+}
+
+/* === ORTA EKRAN === */
+@media (min-width: 769px) and (max-width: 1279px) {
   .row {
     display: block;
   }
   .row table {
     width: 100%;
-  }
-}
-
-/* Orta ekran - Tablet / Laptop */
-@media (min-width: 769px) and (max-width: 1279px) {
-  .header h1 {
-    font-size: 28px;
-  }
-  .header p {
-    font-size: 18px;
-  }
-  .datetime {
-    font-size: 16px;
   }
   th,
   td {
     font-size: 20px;
     padding: 8px;
   }
-  .row {
-    display: block;
-  }
-  .row table {
-    width: 100%;
-  }
 }
 
-/* Büyük ekran - TV */
+/* === TV BÜYÜK EKRAN === */
 @media (min-width: 1280px) {
-  .header h1 {
-    font-size: 40px;
-  }
-  .header p {
-    font-size: 24px;
-  }
-  .datetime {
-    font-size: 22px;
-  }
-  th,
-  td {
-    font-size: 28px;
-    padding: 12px;
-  }
-
   .row {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap; /* TEK CRITICAL SATIR */
+    gap: 20px;
     justify-content: space-between;
-    align-items: flex-start;
   }
 
   .row table {
-    width: 50%;
-    margin: 0;
-    padding: 0;
-    border-collapse: collapse;
+    width: 48%; /* 2 tablo yukarıda yan yana */
   }
-}
-.thead-desktop-only {
-  display: none;
-}
-@media (min-width: 1280px) {
-  .thead-desktop-only {
-    display: table-header-group;
+
+  .vitrin-slider {
+    width: 100%; /* ALTTA TAM GENİŞLİK */
+    height: 350px;
+    background: #00000010;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .vitrin-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
