@@ -75,7 +75,7 @@ function updateTime() {
   if (el) el.innerText = `${date} - ${time}`;
 }
 
-setInterval(updateTime, 120000);
+setInterval(updateTime, 1000);
 updateTime();
 
 const vitrins = [
@@ -98,4 +98,4 @@ setInterval(() => {
     vitrinImg.src = vitrins[currentIndex];
     vitrinImg.style.opacity = 1;
   }, 600);
-}, 3000);
+}, 30000);
