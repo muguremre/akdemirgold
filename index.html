@@ -6,8 +6,11 @@
 
     <link rel="icon" type="image/jpeg" href="akdemirgold.jpg" />
     <title>AKDEMİR GOLD Fiyatlar</title>
+
     <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+    <!-- Mobil tarayıcı barını gizleme -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
@@ -17,14 +20,17 @@
 
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="header">
       <h1>
-        <span class="akdemir">AKDEMİR</span> <span class="gold">GOLD</span>
+        <span class="akdemir">AKDEMİR</span>
+        <span class="gold">GOLD</span>
       </h1>
       <p>0506 045 2210 ~ 0533 305 1052</p>
       <div class="datetime" id="datetime"></div>
     </div>
+
     <div class="container">
       <div class="row">
         <table>
@@ -37,47 +43,47 @@
           </thead>
           <tbody>
             <tr>
-              <td>22 Ayar Bilezik</td>
+              <td class="urun-ad">22 Ayar Bilezik</td>
               <td class="alis" id="BILEZIK_22_alis">-</td>
               <td class="satis" id="BILEZIK_22_satis">-</td>
             </tr>
             <tr>
-              <td>22 CNC Bilezik</td>
+              <td class="urun-ad">22 CNC Bilezik</td>
               <td class="alis" id="BILEZIK_CNC_22_alis">-</td>
               <td class="satis" id="BILEZIK_CNC_22_satis">-</td>
             </tr>
             <tr>
-              <td>21 Ayar Halep</td>
+              <td class="urun-ad">21 Ayar Halep</td>
               <td class="alis" id="HALEP_21_alis">-</td>
               <td class="satis" id="HALEP_21_satis">-</td>
             </tr>
             <tr>
-              <td>Darp Çeyrek</td>
+              <td class="urun-ad">Darp Çeyrek</td>
               <td class="alis" id="DARP_CEYREK_alis">-</td>
               <td class="satis" id="DARP_CEYREK_satis">-</td>
             </tr>
             <tr>
-              <td>Açık Çeyrek</td>
+              <td class="urun-ad">Açık Çeyrek</td>
               <td class="alis" id="ACIK_CEYREK_alis">-</td>
               <td class="satis" id="ACIK_CEYREK_satis">-</td>
             </tr>
             <tr>
-              <td>Darp Yarım</td>
+              <td class="urun-ad">Darp Yarım</td>
               <td class="alis" id="DARP_YARIM_alis">-</td>
               <td class="satis" id="DARP_YARIM_satis">-</td>
             </tr>
             <tr>
-              <td>Açık Yarım</td>
+              <td class="urun-ad">Açık Yarım</td>
               <td class="alis" id="ACIK_YARIM_alis">-</td>
               <td class="satis" id="ACIK_YARIM_satis">-</td>
             </tr>
             <tr>
-              <td>Darp Tam</td>
+              <td class="urun-ad">Darp Tam</td>
               <td class="alis" id="DARP_TAM_alis">-</td>
               <td class="satis" id="DARP_TAM_satis">-</td>
             </tr>
             <tr>
-              <td>Açık Tam</td>
+              <td class="urun-ad">Açık Tam</td>
               <td class="alis" id="ACIK_TAM_alis">-</td>
               <td class="satis" id="ACIK_TAM_satis">-</td>
             </tr>
@@ -94,38 +100,41 @@
           </thead>
           <tbody>
             <tr>
-              <td>Has Altın</td>
+              <td class="urun-ad">Has Altın</td>
               <td class="alis" id="ALTIN_alis">-</td>
               <td class="satis" id="ALTIN_satis">-</td>
             </tr>
             <tr>
-              <td>Dolar</td>
+              <td class="urun-ad">Dolar</td>
               <td class="alis" id="USDTRY_alis">-</td>
               <td class="satis" id="USDTRY_satis">-</td>
             </tr>
             <tr>
-              <td>Euro</td>
+              <td class="urun-ad">Euro</td>
               <td class="alis" id="EURO_alis">-</td>
               <td class="satis" id="EURO_satis">-</td>
             </tr>
             <tr>
-              <td>Gram Altın</td>
+              <td class="urun-ad">Gram Altın</td>
               <td class="alis" id="GRAM_BUYUK_alis">-</td>
               <td class="satis" id="GRAM_BUYUK_satis">-</td>
             </tr>
           </tbody>
         </table>
+
         <div class="vitrin-slider">
           <img id="vitrinImage" src="vitrin1.jpeg" alt="vitrin" />
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+
     <footer class="footer">
       <p>
         © 2025 Akdemir Gold. Tüm hakları saklıdır.<br />
         Bu web sitesi Muhammed Uğur Emre ve AppData Software tarafından yapıldı.
       </p>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
