@@ -130,34 +130,44 @@ th {
     padding: 8px;
   }
 }
+@media (max-width: 1279px) {
+  .vitrin-slider {
+    width: 100%;
+    height: 220px;
+    margin: 10px 0;
+  }
+  .vitrin-slider img {
+    object-fit: cover; /* en doğru kullanım */
+  }
+}
 
 @media (min-width: 1280px) {
   .row {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 sütun */
-    grid-template-rows: auto auto; /* 2 satır */
+    grid-template-columns: 2fr 3fr; /* Sağ kısım biraz geniş */
+    grid-template-rows: auto;
     gap: 20px;
     align-items: start;
   }
 
-  /* Tablo 1 sol üst */
+  /* Sol tablo */
   .row table:first-child {
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 1 / span 2; /* 2 satır kaplasın */
   }
 
-  /* Tablo 2 sağ üst */
+  /* Sağ tablo üstte */
   .row table:nth-child(2) {
     grid-column: 2;
     grid-row: 1;
   }
 
-  /* Slider SADECE sağ alt */
+  /* Slider yalnız sağ tablonun hemen ALTINDA */
   .vitrin-slider {
     grid-column: 2;
     grid-row: 2;
     width: 100%;
-    height: 350px;
+    height: 280px; /* Daha yukarı taşır */
     background: #00000010;
     border-radius: 12px;
     display: flex;
@@ -170,6 +180,5 @@ th {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 0.7s ease-in-out;
   }
 }

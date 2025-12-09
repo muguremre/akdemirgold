@@ -75,7 +75,7 @@ function updateTime() {
   if (el) el.innerText = `${date} - ${time}`;
 }
 
-setInterval(updateTime, 5000);
+setInterval(updateTime, 120000);
 updateTime();
 
 const vitrins = [
