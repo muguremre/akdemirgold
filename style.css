@@ -63,10 +63,7 @@ th {
   font-size: 20px;
 }
 
-/* Ürün adı hücresine siyah alt çizgi */
-.urun-ad {
-  border-bottom: 2px solid #000000 !important;
-}
+
 
 .alis,
 .satis {
