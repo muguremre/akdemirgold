@@ -62,9 +62,6 @@ th {
   background: #d9ead3;
   font-size: 20px;
 }
-
-
-
 .alis,
 .satis {
   border-bottom: none !important;
@@ -177,4 +174,25 @@ th {
     height: 100%;
     object-fit: cover;
   }
+}
+table td,
+table th {
+  position: relative;
+}
+
+/* Satır boyunca, yazıya yakın, siyah çizgi */
+table td::after,
+table th::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px; /* Yazıya olan mesafe - azaltıp/çoğaltabilirsin */
+  height: 2px;
+  background: #000;
+}
+
+/* En son satırda çizgi olmasın */
+table tbody tr:last-child td::after {
+  display: none;
 }
