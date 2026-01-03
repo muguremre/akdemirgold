@@ -1,4 +1,5 @@
 let sonVeriZamani = Date.now();
+
 setInterval(() => {
   const suan = Date.now();
   if (suan - sonVeriZamani > 60000) {
@@ -8,15 +9,16 @@ setInterval(() => {
     window.location.reload();
   }
 }, 5000);
+
 try {
-  const socket = io('https://socketweb.haremaltin.com', {
-    transports: ['websocket'],
-    timeout: 5000,
+  const socket = io('https://hrmsocketonly.haremaltin.com', {
+    transports: ['websocket', 'polling'],
+    path: '/socket.io/',
     reconnection: true
   });
 
   socket.on('connect', () => {
-    console.log('Socket bağlantısı kuruldu.');
+    console.log('Socket bağlantısı (YENİ ADRES) kuruldu.');
     sonVeriZamani = Date.now();
   });
 
@@ -28,7 +30,6 @@ try {
     sonVeriZamani = Date.now();
 
     const data = msg.data;
-    console.log('Gelen veri:', data);
     if (!data) return;
 
     function set(id, alisVal, satisVal) {
