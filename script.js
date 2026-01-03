@@ -1,19 +1,32 @@
+let sonVeriZamani = Date.now();
+setInterval(() => {
+  const suan = Date.now();
+  if (suan - sonVeriZamani > 60000) {
+    console.warn(
+      'Veri akışı durdu! Sistem kendini kurtarmak için yenileniyor...'
+    );
+    window.location.reload();
+  }
+}, 5000);
 try {
   const socket = io('https://socketweb.haremaltin.com', {
     transports: ['websocket'],
-    timeout: 5000
+    timeout: 5000,
+    reconnection: true
   });
 
   socket.on('connect', () => {
     console.log('Socket bağlantısı kuruldu.');
+    sonVeriZamani = Date.now();
   });
 
   socket.on('connect_error', (err) => {
     console.warn('Socket bağlantı hatası:', err.message);
-    // Ekranı boş bırakıyoruz, sabit değer asla yazılmayacak.
   });
 
   socket.on('price_changed', (msg) => {
+    sonVeriZamani = Date.now();
+
     const data = msg.data;
     console.log('Gelen veri:', data);
     if (!data) return;
@@ -64,7 +77,6 @@ try {
   });
 } catch (e) {
   console.error('Genel socket hatası:', e);
-  // Yine hiçbir sabit veri yazmıyoruz
 }
 
 function updateTime() {
@@ -92,13 +104,16 @@ const vitrinImg = document.getElementById('vitrinImage');
 
 setInterval(() => {
   currentIndex = (currentIndex + 1) % vitrins.length;
-  vitrinImg.style.opacity = 0;
 
-  setTimeout(() => {
-    vitrinImg.src = vitrins[currentIndex];
-    vitrinImg.style.opacity = 1;
-  }, 600);
+  if (vitrinImg) {
+    vitrinImg.style.opacity = 0;
+    setTimeout(() => {
+      vitrinImg.src = vitrins[currentIndex];
+      vitrinImg.style.opacity = 1;
+    }, 600);
+  }
 }, 30000);
+
 document.addEventListener('click', () => {
   if (document.documentElement.requestFullscreen) {
     document.documentElement.requestFullscreen();
