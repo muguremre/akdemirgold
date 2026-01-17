@@ -2,19 +2,24 @@ const TARGET_URL = 'https://diko.name.tr/service/api/v1/get_prices/1';
 const API_URL =
   'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(TARGET_URL);
 
+const NORMAL_SURE = 5000;
+const HATA_SURESI = 20 * 60 * 1000; 
+
 async function fetchDikoData() {
+  let sonrakiCalismaSuresi = NORMAL_SURE;
+
   try {
     const response = await fetch(API_URL);
 
     if (!response.ok) {
-      console.warn('Sunucu yanıt vermedi, sonraki tur bekleniyor...');
-      return;
+      throw new Error('Sunucu yanıt vermedi');
     }
 
     const data = await response.json();
 
     let alis = 0;
     let satis = 0;
+
     if (data.originalprices && data.originalprices.ALTIN) {
       alis = parseFloat(data.originalprices.ALTIN.alis);
       satis = parseFloat(data.originalprices.ALTIN.satis);
@@ -25,7 +30,11 @@ async function fetchDikoData() {
 
     if (satis > 0) {
       updateGoldPrices(alis, satis);
+      sonrakiCalismaSuresi = NORMAL_SURE;
+    } else {
+      throw new Error('Fiyat verisi 0 veya hatalı');
     }
+
     const dovizKaynagi = data.originalprices || data.currencies;
     if (dovizKaynagi) {
       if (dovizKaynagi.USDTRY)
@@ -44,7 +53,10 @@ async function fetchDikoData() {
         updateCurrency('ONS', dovizKaynagi.ONS.alis, dovizKaynagi.ONS.satis);
     }
   } catch (error) {
-    console.error('Veri çekme hatası:', error);
+    console.error('Veri çekme hatası, 20 dakika beklenecek:', error);
+    sonrakiCalismaSuresi = HATA_SURESI;
+  } finally {
+    setTimeout(fetchDikoData, sonrakiCalismaSuresi);
   }
 }
 
@@ -119,5 +131,5 @@ document.addEventListener('click', () => {
 
 setInterval(updateTime, 1000);
 updateTime();
-setInterval(fetchDikoData, 5000);
+
 fetchDikoData();
