@@ -66,11 +66,11 @@ function updateGoldPrices(alis, satis) {
   setPrice('BILEZIK_CNC_22', alis * 0.913, satis * 0.932);
   setPrice('HALEP_21', alis * 0.87, satis * 0.885);
   setPrice('AYAR_14', alis * 0.575, satis * 0.715);
-  setPrice('DARP_CEYREK', alis * 1.64, satis * 1.65);
+  setPrice('DARP_CEYREK', alis * 1.65, satis * 1.67);
   setPrice('ACIK_CEYREK', alis * 0.913 * 1.75, satis * 0.925 * 1.75);
-  setPrice('DARP_YARIM', alis * 3.28, satis * 3.3);
+  setPrice('DARP_YARIM', alis * 3.30, satis * 3.34);
   setPrice('ACIK_YARIM', alis * 0.913 * 3.5, satis * 0.925 * 3.5);
-  setPrice('DARP_TAM', alis * 6.52, satis * 6.55);
+  setPrice('DARP_TAM', alis * 6.55, satis * 6.63);
   setPrice('ACIK_TAM', alis * 0.913 * 7, satis * 0.925 * 7);
   setPrice('DARP_720', alis * 6.65, satis * 6.78);
   setPrice('DARP_1750', alis * 16.2, satis * 16.3);
